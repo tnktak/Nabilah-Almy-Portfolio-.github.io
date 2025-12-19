@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NABILAH ALMY | PORTFOLIO</title>
+    <meta name="Description" content="Personal Page Portfolio of NABILAH ALMY" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;800&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <svg style="display: none;">
+        <filter id="paper-noise"> 
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+            <feDiffuseLighting in="noise" lighting-color="#fff" surfaceScale="2">
+                <feDistantLight azimuth="45" elevation="60" />
+            </feDiffuseLighting>
+        </filter>
+    </svg>
+
+    <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="portfolio1.html">Portfolio</a>
+        <a href="video.html">Video</a>
+        <a href="comment.html">Comments</a>
+    </nav>
+
+    <main class="portfolio-container">
+        <div class="paper-texture"></div>
+
+        <section class="intro-hero">
+            <div class="large-title-overlay">NABILAH ALMY PORTFOLIO</div>
+            <div class="hero-content">
+                <figure class="profile-figure">
+                    <img src="image/profile.png.jpg" alt="Nabilah Almy Profile Picture" class="profile-picture">
+                    <figcaption>NABILAH ALMY</figcaption>
+                </figure>
+                
+                <div class="intro-text">
+                    <h1 class="greeting-heading">Hello! 🐻</h1>
+                    <p class="tagline">Third-Year Student | Technology Multimedia</p>
+                    <p>
+                        Welcome to my digital space ✨ I am a Web Programming student, this website showcases my learning journey and projects. I focus on developing visually engaging and functional web experiences using HTML, CSS, and JavaScript.⋆.𐙚 ̊.
+                    </p>
+                    <a href="portfolio1.html" class="cta-button">View My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="character character-left">
+            <img src="image/bear7.png" alt="My Character">
+        </div>
+        
+        <div class="bio-pic bio-pic-bottom-right">
+            <div class="tape-effect"></div>
+            <div class="photo-frame">
+                <img src="image/yb.png" alt="THE LIGHT YEAR">
+                <div class="frame-label"> ⁺˚⋆｡°✩₊✩°｡⋆˚⁺</div>
+            </div>
+        </div>
+        
+        <div class="star star-large-pink star-top-right"></div>
+        <div class="star star-medium-pink star-bottom-left"></div>
+        <div class="sparkle-static sparkle-purple spark-top-left"></div>
+        <div class="sparkle-static sparkle-purple spark-bottom-right"></div>
+        <div class="sparkle-static sparkle-purple spark-mid-right"></div>
+
+    </main>
+
+    <div class="coffee-break">
+        <div class="steam-container">
+            <span class="steam"></span>
+            <span class="steam"></span>
+        </div>
+        <div class="cup">☕</div>
+        <div class="coffee-label">Wake Up!</div>
+    </div>
+	
+		<button id="backToTop" class="back-to-top" title="Go to top">
+    <span class="paw-icon">🐾</span>
+    <small>Up!</small>
+</button>
+	
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3 class="footer-logo">Nabilah Almy</h3>
+            <p>Multimedia Web Programmer Student 🐻</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="biodata.html">About</a>
+            <a href="portfolio1.html">Work</a>
+            <a href="comment.html">Feedback</a>
+        </div>
+
+        <div class="footer-socials">
+            <p>Find me here:</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/nablhalmy" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/nblhalmy" target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div> 
+	</div> 
+	    <div class="footer-bottom">
+        <p>&copy; 2025 Nabilah Almy. Built with 💤 and ☕</p>
+    </div>
+</footer>
+
+    <script>
+        const colors = ["#ffb7e3", "#ffd6f5", "#ffe6fa", "#ffcce6", "#c77dff"];
+
+        document.addEventListener("mousemove", (e) => {
+            const sparkle = document.createElement("div");
+            sparkle.className = "mouse-sparkle";
+             sparkle.style.left = e.pageX + "px";
+             sparkle.style.top = e.pageY + "px";
+            sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(sparkle);
+            setTimeout(() => { sparkle.remove(); }, 800);
+        });
+
+        const teddy = document.querySelector('.character img');
+        teddy.addEventListener('click', (e) => {
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '💤'; 
+                heart.style.left = e.clientX + 'px';
+                heart.style.top = e.clientY + 'px';
+                const x = (Math.random() - 0.5) * 300;
+                const y = (Math.random() - 0.5) * 300;
+                const r = (Math.random() * 360);
+                heart.style.setProperty('--x', `${x}px`);
+                heart.style.setProperty('--y', `${y}px`);
+                heart.style.setProperty('--r', `${r}deg`);
+                document.body.appendChild(heart);
+                setTimeout(() => { heart.remove(); }, 1000);
+            }
+        });
+		
+    </script>
+</body>
+</html>
