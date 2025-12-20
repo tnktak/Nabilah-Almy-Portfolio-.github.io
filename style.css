@@ -900,93 +900,49 @@ body {
 }
 
 /* =========================================
-   15. COMMENT PAGE
+   15. COMMENT PAGE (STICKER STYLE)
    ========================================= */
 
 .contact-container {
+    position: relative; /* This acts as the "paper" the sticker is stuck to */
     display: flex;
-    flex-direction: row; /* Side by side */
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
     margin: 40px auto;
     max-width: 1000px;
-    flex-wrap: wrap; /* Stacks on mobile */
+    padding-bottom: 300px; /* Adds space at the bottom so the sticker has room */
 }
 
 .contact-image {
-    position: fixed;  
-    bottom: 40px;      
-    right: 40px;      
-    z-index: 999;      
+    position: absolute; /* Changes from fixed to a "sticker" on the page */
+    bottom: 0px; 
+    right: 20px;      
+    z-index: 5;      
     pointer-events: auto;
 }
 
-.contact-image .photo-frame {
-    background: white;
-    padding: 12px 12px 40px 12px;
-    box-shadow: 8px 12px 25px rgba(0,0,0,0.15);
-    border: 1px solid #f0f0f0;
-    transform: rotate(7deg); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: fit-content;
-    position: relative;
-}
+/* =========================================
+   16. MOBILE FIX (STOPS OVERLAPPING)
+   ========================================= */
+@media (max-width: 768px) {
+    .contact-container {
+        padding-bottom: 20px; /* Remove the extra bottom space */
+    }
 
-.contact-image .photo-frame img {
-    width: 240px; /* Adjust size as needed */
-    height: auto;
-    display: block;
-    border: 1px solid #eee;
-}
+    .contact-image {
+        position: relative; /* On mobile, it moves BELOW the form */
+        right: auto;
+        bottom: auto;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
 
-.contact-image .frame-label {
-    font-family: 'Great Vibes', cursive; /* Your imported script font */
-    font-size: 26px;
-    color: #666;
-    text-align: center;
-    margin-top: 15px;
-    letter-spacing: 1px;
+    .contact-image .photo-frame img {
+        width: 180px; /* Slightly smaller for phone screens */
+    }
 }
-
-.contact-image .frame-label .kaomoji {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    vertical-align: middle;
-}
-
-/* Hover effect to straighten the photo */
-.contact-image .photo-frame:hover {
-    transform: rotate(0deg) scale(1.05);
-}
-
-/* Make the form inputs match the aesthetic */
-.contact-form .form-group input, 
-.contact-form .form-group textarea, 
-.contact-form .form-group select {
-    width: 100%;
-    border: 2px solid #eee;
-    border-radius: 12px;
-    padding: 12px;
-    transition: border-color 0.3s;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.contact-form .form-group input:focus {
-    border-color: #ff69b4;
-    outline: none;
-    background: #fff;
-}
-@media (max-width: 600px) {
-  /* This hides the image on small screens */
-  .your-polaroid-class-name {
-    display: none; 
-  }
-  
-  .your-polaroid-class-name {
-    position: static;
-    margin-top: 20px;
-    width: 80%; 
-  }
 
 
