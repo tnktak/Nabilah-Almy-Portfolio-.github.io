@@ -977,3 +977,15 @@ body {
     outline: none;
     background: #fff;
 }
+@media (max-width: 600px) {
+  /* This hides the image on small screens */
+  .your-polaroid-class-name {
+    display: none; 
+  }
+  
+  .your-polaroid-class-name {
+    position: static;
+    margin-top: 20px;
+    width: 80%; 
+  }
+
