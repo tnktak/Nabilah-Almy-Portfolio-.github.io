@@ -77,40 +77,6 @@ body {
 .photo-top-right { top: -30px; right: -30px; }
 
 /* =========================================
-  3b. ADOBE ANIMATE CANVAS BACKGROUND
-   ========================================= *
-
-#animate-bg {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    /* Changed from 9999 to -1 so it stays BEHIND your buttons and text */
-    z-index: -1; 
-    pointer-events: none;
-    opacity: 1;
-    /* Ensures no white box blocks the view */
-    background-color: transparent !important; 
-}
-
-#animate-bg canvas {
-    width: 100%;
-    height: 100%;
-    /* This prevents the animation from stretching weirdly */
-    object-fit: cover; 
-    display: block;
-}
-
-#canvas {
-    background-color: transparent !important;
-}
-
-/* Fix for the container on the homepage only */
-.portfolio-container {
-    background: transparent !important;
-}
-
-/* =========================================
    4. LAYOUT CONTAINERS
    ========================================= */
 .portfolio-container {
@@ -311,6 +277,30 @@ body {
 .styled-table thead tr { background-color: #333; color: white; }
 .multimedia-header { background-color: #ff69b4; text-transform: uppercase; }
 .styled-table th, .styled-table td { padding: 15px 20px; border-bottom: 1px solid #eee; }
+
+@media (max-width: 768px) {
+    .bio-pic-bottom-left, 
+    .bio-pic-bottom-right {
+        position: relative; /* Moves them into the normal flow of the page */
+        bottom: auto;
+        left: auto;
+        right: auto;
+        display: inline-block; /* Puts them side-by-side if they fit */
+        margin: 20px auto;
+        z-index: 1;
+        width: 140px; /* Keeps them a nice size */
+    }
+
+    .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+    
+    .bio-pic-bottom-right {
+        margin-top: -10px; 
+    }
 
 /* =========================================
    8. DECORATIONS & ANIMATIONS
@@ -944,5 +934,6 @@ body {
         width: 180px; /* Slightly smaller for phone screens */
     }
 }
+
 
 
